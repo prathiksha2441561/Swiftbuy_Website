@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftBuy - Shop</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+</head>
+<style>
+    /* Hero Section Styling */
+    .hero {
+        background-image: url('Hero Image.webp');
+        background-size: cover;
+        background-position: center;
+        padding: 130px 20px;
+        color: white;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+
+    .hero .btn {
+        background-color: #e74c3c;
+        color: white;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .hero .btn:hover {
+        background-color: lightsalmon;
+        color: black;
+    }
+
+    /* Updated Product Card Styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 1.1rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.product-card .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    width: 100%;
+    max-width: 200px;
+}
+
+.product-card .btn:hover {
+    background-color: #217dbb;
+    transform: scale(1.05);
+}
+
+
+    /* Modal Customization */
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .modal-header {
+        background-color: #2c3e50;
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    .modal-footer {
+        background-color: #f1f1f1;
+    }
+
+    .modal-footer .btn-secondary {
+        background-color: #95a5a6;
+    }
+    .cart-button {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px; /* Adds spacing before 'Our Products' */
+}
+
+.cart-button:hover {
+    background-color: #e68900;
+}
+
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="Logo.webp" alt="SwiftBuy Logo" class="logo-img">
+            <h1 class="logo">SwiftBuy</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Categories.html"><i class="fas fa-th-list"></i> Categories</a></li>
+                    <li><a href="Shop.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                    <li><a href="Contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover the Latest Gadgets & Electronics</h2>
+            <p>Shop the best deals on electronics, gadgets, and more!</p>
+        </div>
+    </section>
+
+    <section class="shop">
+        <div class="container">
+            <br>
+            <a href="View Cart.html" class="cart-button">
+                <i class="fas fa-shopping-cart"></i> View Cart (<span id="cart-count">0</span>)
+            </a>
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal1">
+                    <img src="Wireless Headphones.webp" alt="Wireless Headphones">
+                    <h3>Wireless Headphones</h3>
+                    <p>Rs. 2499</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal2">
+                    <img src="Smart Watch.webp" alt="Smart Watch">
+                    <h3>Smart Watch</h3>
+                    <p>Rs. 1299</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal3">
+                    <img src="Bluetooth Speaker.webp" alt="Bluetooth Speaker">
+                    <h3>Bluetooth Speaker</h3>
+                    <p>Rs. 1349</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal4">
+                    <img src="Fitness Tracker.webp" alt="Fitness Tracker">
+                    <h3>Fitness Tracker</h3>
+                    <p>Rs. 2490</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 5 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal5">
+                    <img src="Gaming Laptop.webp" alt="Gaming Laptop">
+                    <h3>Gaming Laptop</h3>
+                    <p>Rs. 64999</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 6 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal6">
+                    <img src="Smartphone.webp" alt="Smartphone">
+                    <h3>Smartphone</h3>
+                    <p>Rs. 89999</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 7 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal7">
+                    <img src="LED TV.webp" alt="LED TV">
+                    <h3>LED TV</h3>
+                    <p>Rs. 29999</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Product Card 8 -->
+                <div class="product-card" data-bs-toggle="modal" data-bs-target="#productModal8">
+                    <img src="Gaming Console.webp" alt="Gaming Console">
+                    <h3>Gaming Console</h3>
+                    <p>Rs. 39999</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Wireless Headphones -->
+    <div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Wireless Headphones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Wireless Headphones.webp" alt="Wireless Headphones" class="img-fluid">
+                    <p><strong>Price:</strong> Rs. 2499</p>
+                    <p>Enjoy high-quality sound with our premium wireless headphones. Ideal for music lovers and casual listeners alike!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add modals for other products -->
+    <!-- Modal for Smart Watch -->
+    <div class="modal fade" id="productModal2" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Smart Watch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Smart Watch.webp" alt="Smart Watch" class="img-fluid">
+                    <p><strong>Price:</strong> Rs. 1299</p>
+                    <p>Track your fitness goals and stay connected with this stylish smart watch!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Bluetooth Speaker -->
+    <div class="modal fade" id="productModal3" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Bluetooth Speaker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Bluetooth Speaker.webp" alt="Bluetooth Speaker" class="img-fluid">
+                    <p><strong>Price:</strong> Rs. 1349</p>
+                    <p>Portable and powerful sound, perfect for any occasion!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Fitness Tracker -->
+    <div class="modal fade" id="productModal4" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Fitness Tracker</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Fitness Tracker.webp" alt="Fitness Tracker" class="img-fluid">
+                    <p><strong>Price:</strong> Rs. 2490</p>
+                    <p>Monitor your health with this smart fitness tracker!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Gaming Laptop -->
+<div class="modal fade" id="productModal5" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Gaming Laptop</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Gaming Laptop.webp" alt="Gaming Laptop" class="img-fluid">
+                <p><strong>Price:</strong> Rs. 64999</p>
+                <p>Experience top-tier gaming performance with our high-end gaming laptop!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Smartphone -->
+<div class="modal fade" id="productModal6" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Smartphone</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Smartphone.webp" alt="Smartphone" class="img-fluid">
+                <p><strong>Price:</strong> Rs. 89999</p>
+                <p>Stay connected with the latest features in our premium smartphone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for LED TV -->
+<div class="modal fade" id="productModal7" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">LED TV</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="LED TV.webp" alt="LED TV" class="img-fluid">
+                <p><strong>Price:</strong> Rs. 29999</p>
+                <p>Enjoy a cinematic experience at home with our stunning LED TV.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Gaming Console -->
+<div class="modal fade" id="productModal8" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Gaming Console</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Gaming Console.webp" alt="Gaming Console" class="img-fluid">
+                <p><strong>Price:</strong> Rs. 39999</p>
+                <p>Take your gaming experience to the next level with our advanced gaming console.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 SwiftBuy. All Rights Reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+</footer>
+
+
+    <!-- Add additional modals for other products similarly -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

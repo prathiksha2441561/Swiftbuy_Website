@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "product": "Wireless Headphones",
+    "price": 59.99,
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "product": "Gaming Mouse",
+    "price": 29.99,
+    "quantity": 2
+  },
+  {
+    "id": 3,
+    "product": "Mechanical Keyboard",
+    "price": 89.99,
+    "quantity": 1
+  }
+]

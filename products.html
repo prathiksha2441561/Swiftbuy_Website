@@ -1,0 +1,42 @@
+<html ng-app="myApp">
+<head>
+    <title>Product List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="productController">
+
+    <h1>Product List</h1>
+    <label>Search Products: </label>
+    <input type="text" ng-model="searchText">
+    
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price (₹)</th>
+            <th>Stock</th>
+            <th>Rating</th>
+            <th>Release Date</th>
+        </tr>
+        <tr ng-repeat="product in products | filter:searchText | limitTo: 5">
+            <td>{{ product.name | uppercase }}</td>
+            <td>{{ product.category | lowercase }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.stock | number }}</td>
+            <td>{{ product.rating }}</td>
+            <td>{{ product.releaseDate | date: 'mediumDate' }}</td>
+        </tr>
+    </table>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('productController', function($scope, $http) {
+            // Make sure the path to your JSON file is correct
+            $http.get('ecommerce_data.json')
+                .then(function(response) {
+                    $scope.products = response.data; // Bind the JSON data to the products array
+                });
+        });
+    </script>
+</body>
+</html>

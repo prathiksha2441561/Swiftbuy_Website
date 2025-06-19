@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SignupPage>
+    <Title>Create an Account</Title>
+    <Description>Sign up to start shopping with us today!</Description>
+    <Fields>
+        <Field>
+            <Label>Full Name</Label>
+            <Input type="text" placeholder="Enter your full name" />
+        </Field>
+        <Field>
+            <Label>Email Address</Label>
+            <Input type="email" placeholder="Enter your email" />
+        </Field>
+        <Field>
+            <Label>Password</Label>
+            <Input type="password" placeholder="Create a password" />
+        </Field>
+    </Fields>
+    <Buttons>
+        <Button action="submit">Sign Up</Button>
+        <Button action="link" target="Login.html">Already have an account?</Button>
+    </Buttons>
+</SignupPage>

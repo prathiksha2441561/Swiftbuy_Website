@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SwiftBuy - Home</title>
+<link rel="stylesheet" href="Styles.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+.carousel-item img 
+{
+ height:505px;
+ object-fit:cover;
+ width:100%;
+}
+.hero 
+{
+ background-color:#f1c40f; 
+ padding:50px 0;
+ text-align: center;
+}
+.hero h2 
+{
+ font-size:40px;
+ color:#2c3e50; 
+}
+.hero p 
+{
+ font-size:20px;
+ color:white;
+}
+
+        .hero .btn {
+            background-color: #16a085; /* Muted Green */
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #1abc9c; /* Accent Hover Color */
+            color: black;
+        }
+
+        .audio {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #ecf0f1; /* Light Grey */
+        }
+
+        .audio h2 {
+            margin-bottom: 20px;
+        }
+
+        .promo-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: nowrap;  /* Ensure items stay in a single line */
+    overflow-x: auto;   /* Allows horizontal scrolling if items exceed the viewport */
+}
+
+.promo-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px; /* Fixed width for each card */
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 1px;
+}
+
+.promo-card .btn {
+    background-color: #e74c3c; /* Red Accent */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto; /* Ensures the button is pushed to the bottom of the card */
+    width: 100%; /* Makes the button the same width as the card */
+}
+.promo-card .btn:hover
+{
+ background-color: lightsalmon;
+ color:black;
+}
+
+        .promo-card img {
+    width: 100%;
+    height: 350px; /* Fixed height */
+    object-fit: cover; /* Ensures images maintain the aspect ratio while covering the area */
+    border-radius: 8px;
+}
+
+
+        .promo-card h3 {
+            color: #2c3e50;
+            margin-top: 15px;
+            font-size: 22px;
+        }
+
+        .promo-card p {
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .subscribe {
+            background-color: #34495e; /* Darker Slate */
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .subscribe form input {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 20px;
+            border: none;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        .subscribe form button {
+            padding: 10px 30px;
+            font-size: 18px;
+            background-color: #1abc9c;
+            color: white;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .subscribe form button:hover {
+            background-color: #16a085;
+            color: black;
+        }
+        .auth-buttons 
+        {
+         display: flex;
+         gap: 10px; 
+         padding: 10px;
+        }
+        .auth-buttons .btn
+        {
+         padding: 10px 20px;
+         font-size: 16px;
+         border-radius: 20px;
+         text-decoration: none;
+         transition: background-color 0.3s ease;
+        }
+        .auth-buttons .login-btn 
+        {
+         background-color: #16a085; 
+         color: white;
+        }
+        .auth-buttons .login-btn:hover 
+        {
+         background-color: #1abc9c; 
+         color: black;
+        }
+        .auth-buttons .signup-btn 
+        {
+         background-color: #16a085; 
+         color: white;
+        }
+        .auth-buttons .signup-btn:hover 
+        {
+         background-color: #1abc9c;
+         color: black; 
+        }
+        @media(max-width: 768px) 
+        {
+         .header-container 
+         {
+          flex-wrap: wrap; 
+          text-align: center;
+         }
+         .auth-buttons 
+         {
+          margin-top: 10px;
+          justify-content: center;
+          width: 100%; 
+         }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Logo.webp" alt="SwiftBuy Logo" class="logo-img">
+            <h1 class="logo">SwiftBuy</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Categories.html"><i class="fas fa-th-list"></i> Categories</a></li>
+                    <li><a href="Shop.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                    <li><a href="Contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li> 
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="Login.html" class="btn login-btn"><strong>Login</strong></a>
+                <a href="Signup.html" class="btn signup-btn"><strong>Signup</strong></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carousel Section -->
+    <section id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Carousel1.webp" class="d-block w-100" alt="Summer Sale">
+            </div>
+            <div class="carousel-item">
+                <img src="Carousel2.webp" class="d-block w-100" alt="New Arrivals">
+            </div>
+            <div class="carousel-item">
+                <img src="Carousel3.webp" class="d-block w-100" alt="Seasonal Discounts">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Your Favorite Online Store</h2>
+            <p>Discover a wide range of electronics, fashion, and home essentials. Enjoy exclusive offers and seamless shopping!</p>
+            <a href="Shop.html" class="btn hero-btn"><strong>Shop Now</strong></a>
+        </div>
+    </section>
+
+    <section class="audio">
+        <div class="container">
+            <h2>Listen to Our Latest Track</h2>
+            <audio controls>
+                <source src="Song.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+
+    <section class="promotions">
+        <div class="container">
+            <h2>Special Promotions</h2>
+            <div class="promo-cards">
+                <div class="promo-card">
+                    <img src="Summer Sale.png" alt="Summer Sale - 50% Off">
+                    <h3>Summer Sale - 50% Off</h3>
+                    <p>Save big on all summer essentials. Limited time offer!</p>
+                    <a href="Shop.html" class="btn">Shop Now</a>
+                </div>
+                <div class="promo-card">
+                    <img src="Buy 1 Get 1.jpg" alt="Buy 1 Get 1 Free Offer">
+                    <h3>Buy 1 Get 1 Free</h3>
+                    <p>On selected products. Don't miss out!</p>
+                    <a href="Shop.html" class="btn">Explore</a>
+                </div>
+                <div class="promo-card">
+                    <img src="Flash Sale.jpg" alt="Flash Sale - 70% Off">
+                    <h3>Flash Sale - 70% Off</h3>
+                    <p>Limited time offer! Grab your favorites before they’re gone!</p>
+                    <a href="Shop.html" class="btn">View products</a>
+                </div>
+                <div class="promo-card">
+                    <img src="Free Shipping.png" alt="Free Shipping on Orders Over Rs.50">
+                    <h3>Free Shipping on Orders Over Rs. 1999</h3>
+                    <p>Enjoy free shipping on all orders above Rs. 1999. Shop now!</p>
+                    <a href="Shop.html" class="btn">Click here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subscribe">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn"><strong>Subscribe</strong></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SwiftBuy. All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

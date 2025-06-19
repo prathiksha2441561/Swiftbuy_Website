@@ -1,0 +1,135 @@
+<html>
+   <head>
+      <title>Signup - SwiftBuy</title>
+      <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background: linear-gradient(135deg, #1abc9c, #16a085);
+                    color: #fff;
+                }
+                .container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                }
+                .form-card {
+                    background: #ffffff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    width: 400px;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                    color: #333;
+                }
+                h1 {
+                    font-size: 24px;
+                    text-align: center;
+                    color: #333;
+                }
+                p {
+                    text-align: center;
+                    color: #555;
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin: 10px 0 5px;
+                    font-weight: bold;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                button {
+                    width: 100%;
+                    background: #1abc9c;
+                    color: white;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background: #16a085;
+                }
+                .link-btn {
+                    margin-top: 10px;
+                    text-align: center;
+                    display: block;
+                    color: #1abc9c;
+                    text-decoration: none;
+                }
+                .link-btn:hover {
+                    text-decoration: underline;
+                }
+            </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="form-card">
+            <h1>Create an Account</h1>
+            <p>Sign up to start shopping with us today!</p>
+            <form>
+               <label>Full Name</label>
+               <input type="text" placeholder="Enter your full name"/>
+               <label>Email Address</label>
+               <input type="email" placeholder="Enter your email"/>
+               <label>Password</label>
+               <input type="password" placeholder="Create a password"/>
+               <button type="submit">Sign Up</button>
+               <a class="link-btn" href="Login.html">Already have an account?</a>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+
+            const nameInput = document.querySelector('input[type="text"]');
+            const emailInput = document.querySelector('input[type="email"]');
+            const passwordInput = document.querySelector('input[type="password"]');
+
+            const fullName = nameInput.value.trim();
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!fullName) {
+                alert("Please enter your full name.");
+                nameInput.focus();
+                return;
+            }
+
+            if (!email || !validateEmail(email)) {
+                alert("Please enter a valid email address.");
+                emailInput.focus();
+                return;
+            }
+
+            if (!password || password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                passwordInput.focus();
+                return;
+            }
+
+            alert("Account created successfully! Redirecting to login page...");
+            window.location.href = "Login.html";
+        });
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    });
+</script>

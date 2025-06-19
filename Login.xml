@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoginPage>
+    <Title>Login to Your Account</Title>
+    <Description>Welcome back! Please enter your email and password to log in.</Description>
+    <Fields>
+        <Field>
+            <Label>Email Address</Label>
+            <Input type="email" placeholder="Enter your email" />
+        </Field>
+        <Field>
+            <Label>Password</Label>
+            <Input type="password" placeholder="Enter your password" />
+        </Field>
+    </Fields>
+    <Buttons>
+        <Button action="submit">Login</Button>
+        <Button action="link" target="Signup.html">Sign Up</Button>
+    </Buttons>
+</LoginPage>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cartApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftBuy - View Cart</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="cart.js"></script>
+</head>
+<body ng-controller="CartController">
+    <header>
+        <div class="container">
+            <img src="Logo.webp" alt="SwiftBuy Logo" class="logo-img">
+            <h1 class="logo">SwiftBuy</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Categories.html"><i class="fas fa-th-list"></i> Categories</a></li>
+                    <li><a href="Shop.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                    <li><a href="Contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <h2 class="text-center mb-4">🛒 Your Shopping Cart</h2>
+
+        <div class="table-responsive">
+            <table class="table table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cartItems">
+                        <td>{{ item.product }}</td>
+                        <td>${{ item.price.toFixed(2) }}</td>
+                        <td>
+                            <input type="number" ng-model="item.quantity" min="1" class="form-control w-50 mx-auto"
+                                ng-blur="updateTotal()"
+                                ng-focus="highlightInput($event)">
+                        </td>
+                        <td>${{ (item.price * item.quantity).toFixed(2) }}</td>
+                        <td>
+                            <button class="btn btn-danger" ng-click="removeItem($index)">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-summary text-center p-3 mt-3 border rounded bg-light">
+            <h4><strong>Grand Total: </strong><span class="text-success">${{ grandTotal.toFixed(2) }}</span></h4>
+            <button class="btn btn-primary mt-2 px-4 py-2" ng-click="checkout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </main>
+</body>
+</html>

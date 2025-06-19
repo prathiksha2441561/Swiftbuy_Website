@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftBuy - Categories</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Categories Section */
+        .categories {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+
+        .categories h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .category-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category-card {
+            width: 22%;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensure the image covers the space while maintaining aspect ratio */
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .category-card .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-card .btn:hover {
+            background-color: #16a085;
+        }
+
+        /* Video Section */
+        .video {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+
+        .video h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .video iframe {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Featured Products Section */
+        .featured {
+            padding: 50px 0;
+            background-color: #ecf0f1;
+        }
+
+        .featured h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .featured-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .featured-card {
+            width: 45%;
+            text-align: center;
+        }
+
+        .featured-card img {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .featured-card p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        /* Photo Gallery Section */
+        .photo-gallery {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+
+        .photo-gallery h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 30%;  /* Adjust width for 3 items per row */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%;  /* Adjust to 2 items per row on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;  /* Adjust to 1 item per row on small screens */
+            }
+        }
+
+        /* Canvas Drawing Section */
+        .canvas-drawing {
+            padding: 50px 0;
+            background-color: #f7f7f7;
+        }
+
+        .canvas-drawing h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #drawingCanvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="Logo.webp" alt="SwiftBuy Logo" class="logo-img">
+            <h1 class="logo">SwiftBuy</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Categories.html"><i class="fas fa-th-list"></i> Categories</a></li>
+                    <li><a href="Shop.html"><i class="fas fa-shopping-cart"></i> Shop</a></li>
+                    <li><a href="Contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+                    <li><a href="About Us.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="categories">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="Electronics.jpg" alt="Electronics">
+                    <h3>Electronics</h3>
+                    <a href="electronics.html" class="btn">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <img src="Fashion.jpg" alt="Fashion">
+                    <h3>Fashion</h3>
+                    <a href="fashion.html" class="btn">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <img src="Home.webp" alt="Home Essentials">
+                    <h3>Home Essentials</h3>
+                    <a href="home.html" class="btn">Shop Now</a>
+                </div>
+                <div class="category-card">
+                    <img src="Gaming.jpg" alt="Gaming">
+                    <h3>Gaming</h3>
+                    <a href="gaming.html" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video">
+        <div class="container">
+            <h2>Explore Our Categories</h2>
+            <iframe width="1120" height="500" src="Video.mp4" title="Ecommerce Video"></iframe>
+        </div>
+    </section>
+
+    <section class="photo-gallery">
+        <div class="container">
+            <h2>Our Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Gallery1.png" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallery2.png" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallery3.png" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallery4.png" alt="Gallery Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallery5.png" alt="Gallery Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gallery6.png" alt="Gallery Image 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="canvas-drawing">
+        <div class="container">
+            <h2>Canvas Drawing</h2>
+            <canvas id="drawingCanvas" width="600" height="400"></canvas>
+            <br>
+            <button id="clearBtn">Clear Canvas</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SwiftBuy. All Rights Reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        const canvas = document.getElementById("drawingCanvas");
+const ctx = canvas.getContext("2d");
+let isDrawing = false;
+
+// Function to get mouse position relative to the canvas
+function getMousePos(e) {
+    const rect = canvas.getBoundingClientRect();
+    return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+    };
+}
+
+// Function to start drawing
+function startDrawing(e) {
+    isDrawing = true;
+    draw(e);
+}
+
+// Function to stop drawing
+function stopDrawing() {
+    isDrawing = false;
+    ctx.beginPath();
+}
+
+// Function to draw on canvas
+function draw(e) {
+    if (!isDrawing) return;
+
+    const mousePos = getMousePos(e);
+
+    ctx.lineWidth = 2;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "black";
+
+    ctx.lineTo(mousePos.x, mousePos.y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(mousePos.x, mousePos.y);
+}
+
+// Event listeners for mouse events
+canvas.addEventListener("mousedown", startDrawing);
+canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("mousemove", draw);
+
+// Clear canvas button
+const clearBtn = document.getElementById("clearBtn");
+clearBtn.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+    </script>
+
+</body>
+</html>

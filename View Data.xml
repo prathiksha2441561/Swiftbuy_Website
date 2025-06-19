@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Company xmlns="http://www.example.com/company">
+    <CompanyInfo>
+        <Id>001</Id>
+        <Name>SwiftBuy E-Commerce</Name>
+        <Address>
+            <Street>123 Swift Blvd</Street>
+            <City>New York</City>
+            <State>NY</State>
+            <Zip>10001</Zip>
+        </Address>
+        <Contact>
+            <Phone>+1-234-567-890</Phone>
+            <Email>support@swiftbuy.com</Email>
+        </Contact>
+        <Ceo>Smith</Ceo>
+        <Departments>
+            <Department>
+                <Name>Customer Support</Name>
+                <Phone>+1-234-567-8910</Phone>
+                <Email>support@swiftbuy.com</Email>
+            </Department>
+            <Department>
+                <Name>Sales</Name>
+                <Phone>+1-234-567-8920</Phone>
+                <Email>sales@swiftbuy.com</Email>
+            </Department>
+            <Department>
+                <Name>Marketing</Name>
+                <Phone>+1-234-567-8930</Phone>
+                <Email>marketing@swiftbuy.com</Email>
+            </Department>
+            <Department>
+                <Name>IT Services</Name>
+                <Phone>+1-234-567-8940</Phone>
+                <Email>it@swiftbuy.com</Email>
+            </Department>
+        </Departments>
+        <BusinessHours>
+            <OpeningHours>
+                <Day>Monday</Day>
+                <Open>9:00 AM</Open>
+                <Close>6:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Tuesday</Day>
+                <Open>9:00 AM</Open>
+                <Close>6:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Wednesday</Day>
+                <Open>9:00 AM</Open>
+                <Close>6:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Thursday</Day>
+                <Open>9:00 AM</Open>
+                <Close>6:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Friday</Day>
+                <Open>9:00 AM</Open>
+                <Close>6:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Saturday</Day>
+                <Open>10:00 AM</Open>
+                <Close>4:00 PM</Close>
+            </OpeningHours>
+            <OpeningHours>
+                <Day>Sunday</Day>
+                <Open>Closed</Open>
+                <Close/>
+            </OpeningHours>
+        </BusinessHours>
+        <Website>www.swiftbuy.com</Website>
+        <SocialMedia>
+            <Facebook>https://www.facebook.com/SwiftBuy</Facebook>
+            <Twitter>https://www.twitter.com/SwiftBuy</Twitter>
+            <Instagram>https://www.instagram.com/SwiftBuy</Instagram>
+            <LinkedIn>https://www.linkedin.com/company/SwiftBuy</LinkedIn>
+        </SocialMedia>
+    </CompanyInfo>
+</Company>
