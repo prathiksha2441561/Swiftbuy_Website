@@ -26,7 +26,7 @@ Navigation:
   - About Us
   - Login / Signup
 
-Homepage Overview
+Homepage Overview:
 The homepage features an image slider, exclusive offers, an audio section, and a newsletter sign-up form, all designed using Bootstrap and custom CSS to create a professional storefront layout.
 
 Tech Stack
