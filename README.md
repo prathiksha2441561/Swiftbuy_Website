@@ -29,7 +29,7 @@ Navigation:
 Homepage Overview:
 The homepage features an image slider, exclusive offers, an audio section, and a newsletter sign-up form, all designed using Bootstrap and custom CSS to create a professional storefront layout.
 
-Tech Stack
+Tech Stack:
 - HTML5
 - CSS3
 - Bootstrap 5
