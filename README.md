@@ -20,6 +20,7 @@ UI Components:
 - Newsletter subscription section
 
 Navigation:
+
 Multi-page structure with links to:
  - Home
  - Shop
