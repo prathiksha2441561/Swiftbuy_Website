@@ -2,7 +2,7 @@ SwiftBuy - E-commerce Website (Full Stack Lab Project)
 
 SwiftBuy is a visually engaging e-commerce homepage developed as part of a Full Stack Development Lab. It showcases frontend skills using HTML, CSS, Bootstrap, and media integration. The project simulates a modern store interface with categories, promotional offers, and user login/signup options.
 
-Features
+Features:
 
 Frontend Development:
 - HTML5 & CSS3
@@ -20,13 +20,13 @@ UI Components:
 - Newsletter subscription section
 
 Navigation:
-- Multi-page structure with links to:
-  - Home
-  - Shop
-  - Categories
-  - Contact
-  - About Us
-  - Login / Signup
+Multi-page structure with links to:
+ - Home
+ - Shop
+ - Categories
+ - Contact
+ - About Us
+ - Login / Signup
 
 Homepage Overview:
 
